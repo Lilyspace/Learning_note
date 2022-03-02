@@ -1,0 +1,140 @@
+
+CSS
+
+CSS，指的是Cascading Style Sheet（层叠样式表），它是用来控制网页外观的一门技术。HTML控制网页的结构，CSS控制网页的外观，JavaScript控制网页的行为。
+1. CSS引入方式：外部、内部、行内样式表，外部样式表是最理想的CSS引入方式
+               外部样式表在单独文件中定义，然后在HTML文件的<head></head>标签对中使用link标签来引用<link rel="stylesheet" type="text/css" href="文件路径">
+               内部样式表指的是把CSS代码放在head标签内部的style标签内，而行内样式表的CSS是在“标签的style属性”中定义的
+2. CSS选择器
+   常见选择器：元素选择器，id选择器，class选择器，后代选择器，群组选择器
+   语法：
+        选择器
+        {
+           属性 1 ： 取值 1；
+           ...
+           属性 n : 取值 n;
+        }
+   id和class是元素最基本的两个属性
+   元素选择器：元素选择器，就是“选中”相同的元素（标签），然后给相同的元素定义同一个CSS样式。
+   id选择器： 对于id选择器，id名前面必须要加上前缀#，表示这是一个id选择器
+   class选择器：class名前面必须要加上前缀（英文点号），表明这是一个class选择器
+   后代选择器：选择元素内部中所有的某一种元素，包括子元素和其他后代元素（如孙元素）
+              父元素和后代元素必须要用空格隔开，从而表示选中某个元素内部的后代元素
+              语法：选择器1 选择器2{...}
+   群组选择器：群组选择器，指的是同时对几个选择器进行相同的操作，两个选择器之间必须要用英文逗号（，）隔开
+              语法：选择器1,选择器2{...}
+
+3. 字体
+   字体样式：font-family, font-size, font-weight, font-style, color
+   字体类型（font-family）:font-family: 字体1，字体2，... 字体n;  默认宋体； 
+                          对于font-family属性，如果字体类型只有一个英文单词，则不需要加上双引号；如果字体类型是多个英文单词或者是中文，则需要加上双引号。
+                          在实际开发中，比较美观的中文字体有微软雅黑、宋体，英文字体有Times New Roman、Arial、Verdana
+   字体大小（font-size）： font-size：像素值; （eg 10px）
+   字体粗细（font-weight）: font-weight: 取值；font-weight属性取值有两种：一种是100～900的“数值”；另外一种是“关键字”，bold(较粗)。
+   字体风格（font-style）：我们可以使用font-style属性来定义斜体效果，font-style：取值（normal/italic/oblique）；
+   字体颜色（color）: color:颜色值；color属性取值有两种：一种是“关键字”，另外一种是“16进制RGB值”，有两个色值需要记住：#000000是黑色，#FFFFFF是白色
+                     获取颜色值工具：在线调色板，color picker软件
+
+4. CSS注释
+   /*注释的内容*/
+
+5. 文本样式
+   字体样式针对的是“文字本身”的型体效果，而文本样式针对的是“整个段落”的排版效果
+   文本样式属性：text-indent，text-align, text-decoration, text-transform, line-height, letter-spacing/word-spacing
+   首行缩进（text-indent）:可以使用text-indent属性来定义p元素的首行缩进;中文段落首行一般需要缩进两个字符。如果想要实现这个效果，text-indent值应该是font-size值的两倍
+                          eg. p{font-size:14px; text-indent:28px}
+   水平对齐（text-align）: text-align: center;
+   文本修饰（text-decoration）: 下划线、中划线、顶划线, None, underline, line-through, overline;
+                              使用“text-decoration:none;”去除a元素(超链接)的下划线，这个技巧我们在实际开发中会大量使用
+   大小写（text-transform）：可以使用text-transform属性来将文本进行大小写转换；none, uppercase(转换为大写)，lowercase(转换为小写)，capitalize(只将首字母转为大写)
+   行高（line-height）：可以使用line-height属性来控制每行文本的高度，line-hight:像素值；
+   间距（letter-spacing/word-spacing）
+
+6. 边框样式
+   几乎可以对所有的元素定义边框
+   border: 边框宽度，边框外观（实线、虚线等），边框颜色；border-width、border-style（none/dashed/solid）、border color
+           简写形式, border：1px solid red;
+
+7. 列表样式
+   列表项符号（list-style-type）: 有序列表（decimal；lower-roman; upper-roman; lower-alpha; upper-alpha）
+                                 无序列表（disc(实心圆)；circle(空心圆)；square（正方形））
+                                 去除项目符号：none; ol,ul{list-style-type:none;}使用的是“群组选择器”。当对多个不同元素定义了相同的CSS样式时，可以使用群组选择器
+
+8. 表格样式(在header标签里的table元素定义)
+   表格标题位置（caption-side）: table{caption-side:top/bottom;} 
+   表格边框合并（border-collapse）； table{border-collapse: separate/collapse;}
+   表格边框间距（border-spacing）：table{border-spacing: 像素值;}
+
+9. 图片样式
+   图片大小及边框：img {width:像素值；
+               height:像素值；
+               border：1px solid red;
+                  }
+   图片对齐
+          水平对齐：text-align:left/center/rught；图片是在父元素中进行对齐，因此text-align也在图片的父元素中定义
+          垂直对齐：vertical-align属性定义周围的行内元素或文本相对于该元素的垂直方式
+                   vertical-align:top/middle/bottom/baseline；
+
+10. 背景样式：包括背景颜色和背景图片
+    背景颜色（background-color）
+    背景图片：
+             背景图片导入（background-image）background-image：url(图片路径)
+             背景图片重复（background-repeat）background-repeat：repeat/repeat-x/repeat-y/no-repaet
+             背景图片位置（background-position）background-position：像素/关键字（Top/bottom，left/center/right）
+                                              background-position: 水平距离 垂直距离；两个值是相对该元素的左上角来说的
+             背景图片固定（background-attachment）定义背景图片是随元素一起滚动还是固定不动; background-attachment:scroll/fixed
+
+11. 超链接样式
+    超链接伪类：定义超链接在鼠标点击的不同时期的样式，这四种样式定义顺序不能改变；在实际开发中，我们只会用到两种状态：未访问时状态和鼠标经过状态
+               对于未访问时状态，我们直接针对a元素定义就行了
+               a:link{...} 未访问时的样式
+               a:visited{...} 访问后
+               a:hover{...} 鼠标经过
+               a:active{...} 鼠标点击
+
+               :hover伪类可以定义任何一个元素在鼠标经过时的样式
+
+12. 鼠标样式：浏览器鼠标样式和自定义鼠标样式
+               浏览器鼠标样式：cursor:取值（default/pointer/text）；
+               自定义鼠标样式: cursor:url(图片地址)，属性值；其中鼠标图片后缀名一般都是.cur，而这个“属性值”一般为default、pointer、text这三种
+
+13. 盒子模型：页面中的每个元素都可以看成一个盒子，并且占据着一定的页面空间。一个页面由很多这样的盒子组成，这些盒子之间会互相影响。
+             每个元素都看成一个盒子，盒子模型是由content（内容）、padding（内边距）、margin（外边距）和border（边框）这四个属性组成的。此外，在盒子模型中，还有宽度width和高度height两大辅助性属性。
+
+             内容区：内容区有三个属性：width、height和overflow，当内容过多超出width和height时，可以使用overflow属性来指定溢出处理方法
+                    只有块元素才可以设置width和height，行内元素是无法设置width和height的；要是没有给块元素设置width，那么块元素就会延伸到整行
+
+             内边距：指的是内容区和边框之间的空间，内边距的属性有五种：padding、padding-top、padding-bottom、padding-left、padding-right
+                    简写形式：
+                            padding:像素值;（一致）
+                            padding:像素值1 像素值2;（上下 左右）
+                            padding:像素值1 像素值2 像素值3 像素值4;（顺时针四个数）
+
+             外边距：指的是两个盒子之间的距离，外边距的属性也有五种，即margin、margin-top、margin-bottom、margin-left、margin-right
+                    当既有父元素，也有兄弟元素时，该元素会先看看四个方向有没有兄弟元素存在。如果该方向有兄弟元素，则这个方向的margin就是相对于兄弟元素而言。如果该方向没有兄弟元素，则这个方向的margin就是相对于父元素而言；margin和padding简写形式一致
+
+             边框：属性有border、border-width、border-style、border-color，常用简写形式border:1px solid red;
+
+      浏览器审查元素：将鼠标移到你想要的元素上面，然后按一下右键，从弹出菜单中选择“检查”，在弹出的控制台中，我们可以找到该元素的盒子模型
+
+14. 浮动/定位布局
+    正常文档流：正常文档流，将一个页面从上到下分为一行一行的，其中块元素独占一行，相邻行内元素在每一行中按照从左到右排列直到该行排满
+               div、p、hr都是块元素，独占一行;而span、i、img都是行内元素，因此如果两个行内元素相邻，就会位于同一行，并且从左到右排列
+
+    脱离文档流，指的是脱离正常文档流,可以使用两种方法：浮动和定位
+       浮动：float:left/right;浮动，可以使得元素移到左边或者右边，并且允许后面的文字或元素环绕着它。浮动最常用于实现水平方向上的并排布局，例如两列布局、多列布局
+            清除浮动 clear:both,我们一般都是在浮动元素后面再增加一个空元素，然后为这个空元素定义clear:both;来清除浮动
+       定位：定位使你可以将一个元素精确地放在页面上你指定的地方，通过position属性实现，分为固定定位（fixed）相对定位（relative）绝对定位（absolute）静态定位（static）
+            position属性需结合top、bottom、left和right这四个属性一起使用，固定定位和绝对定位的位置是相对于浏览器而言，而相对定位的位置是相对原始位置而言
+            固定定位：使用position:fixed;来实现固定定位。所谓的固定定位，指的是被固定的元素不会随着滚动条的拖动而改变位置；固定定位最常用于实现返回顶部功能
+            相对定位：position:relative;来实现相对定位，所谓的相对定位，指的是该元素的位置是相对于它的原始位置计算而来的
+            绝对定位：使用position:absolute;来实现绝对定位，绝对定位元素的前面或者后面的元素会认为这个元素并不存在，即这个元素浮于其他元素上面，它是独立出来的
+
+
+
+
+
+
+
+
+

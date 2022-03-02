@@ -1,0 +1,26 @@
+JS
+
+1. 静态页面和动态页面的区别在于是否与服务器进行数据交互。或者简单来说，是否用到了后端技术（如PHP、JSP、ASP.NET）
+2. 想要在HTML中引入JavaScript，一般有三种方式：外部JavaScript、内部JavaScript、元素事件JavaScript
+   外部JavaScript文件：在HTML中，我们可以使用script标签引入外部JavaScript文件。在script标签中，我们只需用到src这一个属性。src，是source（源）的意思，指向的是文件路径，外部JavaScript文件不仅可以在head中引入，还可以在body中引入
+   内部JavaScript：内部JavaScript，指的是把HTML代码和JavaScript代码放在同一个文件中。其中JavaScript代码写在<script></script>标签对内。
+3. document.write()：在页面输出一个内容
+   alert()：弹出一个对话框
+4. 在JavaScript中，每一条语句都是以英文分号（；）作为结束符
+5. 在JavaScript中，变量由字母、下划线、$或数字组成，并且第一个字母必须是“字母、下划线或$;变量的命名区分大小写
+                  所有JavaScript变量都是由var声明，即 var 变量名1 = 值，变量名2 = 值；
+6. 在JavaScript中，常量指的是一个不能改变的量，一般情况下，常量名全部大写
+7. 在JavaScript中，基本数据类型有五种：数字、字符串、布尔值、未定义值和空值。而常见的引用数据类型有两种：数组、对象
+8. 在JavaScript中，字符串都是用英文单引号或英文双引号括起来的；未定义值指的是如果一个变量虽然已经用var来声明了，但是并没有对这个变量进行赋值，用undefined表示
+9. 自增运算符，i++指的是在使用i之后，再让i的值加上1；++i指的是在使用i之前，先让i的值加上1；自减运算符--也是如此
+10. 赋值运算符：var a+=b其实就是var a=a+b的简化形式，+=、-=、*=、/=
+11. 逻辑运算符：&&（与）、||（或）、！（非）
+12. 条件运算符：var a = 条件？表达式1：表达式2；
+13. “字符串”转换为“数字”：在JavaScript中，要将字符串转换为数字，可以使用两种方式。Number();parseInt()和parseFloat();
+                        Number()方法可以将任何“数字型字符串”转换为数字；parseInt()和parseFloat是提取“首字母为数字的任意字符串”中的数字，其中parseInt()提取的是整数部分，parseFloat()不仅会提取整数部分，还会提取小数部分
+14. “数字”转换为“字符串”：与空字符串相加；toString()
+15. 转义字符：\";\';\n(换行符)，如果是在document.write()中换行，则应该用<br/>。如果是在alert()中换行，则应该用\n
+16. 注释：//(单行注释)；/*多行注释*/
+
+17. 流程控制:顺序结构，选择结构，循环结构
+18. 

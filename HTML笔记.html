@@ -1,0 +1,108 @@
+<p>
+
+Html笔记
+
+1. HTML的基本结构
+<!DOCTYPE html>   文档声明
+<html>
+    <head>
+    </head>   页头
+    <body>
+    </body>...页身
+</html>
+
+2. head 标签内只能包含：title，mata, link, style, script, base 标签。
+   title：定义网页标题
+   mata:用来告诉搜索引擎这个页面是干嘛的，有两个重要属性：name(key words 和 description取值), http-equip(定义网页所使用的编码；定义网页自动刷新跳转)
+        <meta name="key words" content="绿叶学习网，前端开发"/>
+        <meta name="description" content="绿叶学习网是一个技术网站"/>
+        <meta http-equip="Content type" content="text/html; charset=utf-8"/> 该页面所使用的编码是utf-8,也可写为<meta charset="utf-8" />，位置在最前面
+        <meta http-equip="refresh" content="6;url=http://www.baidu.com"/> 6s后字典跳转到百度
+    style标签:用于定义元素的CSS样式
+    script标签:用于定义页面的JavaScript代码，也可以引入外部JavaScript文件
+    link标签:用于引入外部样式文件（CSS文件）
+    base标签:这个标签一点意义都没有，可以直接忽略
+
+3. HTML注释
+   <!---->”又叫做注释标签。“<!--”表示注释的开始，“-->”表示注释的结束。
+
+4. body标签 
+   标题标签：在HTML中，共有六个级别的标题标签：h1、h2、h3、h4、h5、h6，一个页面一般只能有一个h1标签
+   段落标签：<p></p>，用来显示一段文字，段落标签会自动换行，并且段落与段落之间有一定的间距
+   换行标签：<br/>，使用p标签会导致段落与段落之间有一定的间隙，而使用br标签却不会
+   文本标签：使用“文本标签”来对文字进行修饰，常用的文本标签如下
+            粗体标签strong；斜体标签i；上标标签sup;下标标签sub
+   水平线标签: </hr>
+   div标签: 使用div标签来划分HTML结构，从而配合CSS来“整体”控制某一块的样式
+   自闭合标签：<meta/>,<link/>,<br/>,<hr/>,<img/>,<input/>
+
+5. 特殊符号
+   空格：&nbsp;
+
+6. 列表
+   有序列表：
+            <ol>
+               <li>列表项</li>
+               <li>列表项</li>
+               <li>列表项</li>
+            </ol>
+   无序列表：<ul>,</ul>
+   定义列表：
+            <dl>
+               <dt>名词</dt>
+               <dd>描述</dd>
+                     
+            </dl>
+
+7. 表格
+   表格 table标签；行 tr标签；一般单元格 td标签；表头单元格 th
+   标题 caption标签
+   语义化标签：thead、tbody和tfoot把表格划分为三部分：表头、表身、表脚;表脚往往用于统计数据
+
+   合并行：<td rowspan="跨越的行数"></td>
+   合并列：<td colspan="跨越的列数"></td>
+
+8. 图片
+   img标签
+   <img src="路径" alt="给搜索引擎看的描述" title="给用户看的描述"/>
+
+   相对路径："../"表示省略的相同的上级目录
+   图片格式：.jpg;.png;.gif
+           如果想要展示色彩丰富而高品质图片，可以使用.jpg格式；如果是一般图片，为了减少体积或者想要透明效果，可以使用.png格式；如果是动画图片，可以使用.gif格式
+
+9. 超链接：分为外链接，内链接和锚点链接
+   <a href="链接地址" target="打开方式">文本或图片</a>   打开方式一般使用_blank，在新窗口打开链接
+   锚点链接：明确目标元素的id，a标签的href属性指向该id（href="#id"）
+
+10. 表单
+    指的是文本框、按钮、单选框、复选框、下拉列表等的统称；表单最重要的作用就是：在浏览器端收集用户的信息，然后将数据提交给服务器来处理
+    表单标签有五种：form、input、textarea、select和option
+    form标签：必须要把所有表单标签放在form标签内部，
+             有name(名称), method（http提交方法）, action（指定表单数据提交到哪一个地址进行处理）, target（指定窗口的打开方式）, enctypeenctype属性用于指定表单数据提交的编码方式。一般情况下不需要设置，除非用到上传文件功能等属性
+             <form name="myForm" method="post" action="index.php" target="blank"></form>
+    input标签：
+              <input type="表单类型"/>
+              input标签的type有：text(单行文本框)；password(密码文本框)；radio(单选框)；checkbox(多选框)；button/submit/reset(按钮)；file（文件上传）
+              text属性：value(文本框默认显示值）；size(文本框长度)；maxlength(文本框最多可输入字符数)；密码文本框可看成是一种特殊的单行文本框，有着和单行文本框一样的属性
+              radio语法：<input type="radio" name="组名" value="取值"/>;对于同一组的单选框，必须要设置一个相同的name，来把这些选项归为同一个组上面; checkbox与radio类似
+              按钮：button（普通）/submit（提交）/reset（重置）
+                   普通按钮一般情况下都是配合JavaScript来进行各种操作的，<input type="button" value="取值">，value即按钮上的文字
+                   提交按钮一般用来给服务器提交数据；重置按钮一般用来清除用户在表单中输入的内容；提交和重置的作用域都是当前form标签
+              file: <input type="file">
+
+     多行文本框：<textarea rows="行数" cols="列数" value="取值">默认内容</textarea>
+
+     下拉列表:下拉列表由select和option这两个标签配合使用来表示
+              select标签常用属性有：multiple和size, multiple设置下拉列表可以选择多项，size设置显示的列表项数
+              option标签常用属性有：select(是否选中)，value(选项值，配合JavaScript以及服务器进行操作)
+
+11. 框架
+    iframe标签：实现一个内嵌框架，就是在当前页面再嵌入另外一个网页
+               <iframe src="链接地址" width="数值" height="数值"></iframe>
+
+<p>
+
+
+
+
+
