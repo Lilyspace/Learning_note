@@ -1,0 +1,74 @@
+1. 初始设置
+   设置姓名和邮箱：
+   git config --global user.name "..."
+   git config --global user.email "..."
+   创建SSH key: ssh-keygen -t rsa -C "e-mail"
+   查看公钥 id_rsa.pub: cat ~/.ssh/id_rsa.pub
+   私人密钥与GitHub进行认证和通信:ssh -T git@github.com
+
+前期准备：
+2. clone已有仓库：
+   git clone git@github.com:Lilyspace/Test.git（仓库地址，在网页code-SSh显示）
+3. cd命令：change directory的简写，改变目录， 如 cd e:\fff  切换 E 盘下面的fff目录；cd .. 回退到上一个目录
+4. pwd : print working directory, 打印工作目录，它会显示我们当前所在的目录路径
+5. ls: list, 列出当前目录中的所有文件
+6. git status: 文件未添加至git 仓库时，显示为untracked files
+7. 通过git add命令将文件加入暂存区，再通过git commit命令提交。添加成功后，可以通过git log命令查看提交日志。
+    git add hello_world.text: 将hello_word.tesxt提交至仓库。这样一来，这个文件就进入了版本管理系统的管理之下。今后的更改管理都交由Git进行
+    git commit -m "提交信息，是对这个提交的概述"
+    git log 查看提交日志
+8. git log之后需要退出Vim编辑器，q; wq 保存并退出
+9. git push: GitHub上的仓库会被更新
+
+
+10. 基本操作
+   git init: 初始化仓库，以下命令实际创建了一个名为git-tutorial的目录并进行了初始化
+             mkdir git-tutorial
+             cd git_tutorial
+             git init 
+   ．git目录里存储着管理当前目录内容所需的仓库数据。在Git中，我们将这个目录的内容称为“附属于该仓库的工作树”。
+   文件的编辑等操作在工作树中进行，然后记录到仓库中，以此管理文件的历史快照。如果想将文件恢复到原先的状态，可以从仓库中调取之前的快照，在工作树中打开
+   git status:查看仓库的状态
+   git add + 文件名:要想让文件成为Git仓库的管理对象，就需要用git add命令将其加入暂存区中
+   git commit -m "提交信息，是对这个提交的概述"：保存仓库的历史记录
+   中止提交：如果在编辑器启动后想中止提交，请将提交信息留空并直接关闭编辑器，随后提交就会被中止
+   git log：查看提交日志；
+            如果只想让程序显示第一行简述信息，可以在git log命令后加上--pretty=short
+            只要在git log命令后加上目录名，便会只显示该目录下的日志。如果加的是文件名，就会只显示与该文件相关的日志
+            如果想查看提交所带来的改动，可以加上-p参数
+            git log --graph命令可以用图表形式输出提交日志
+   git diff：可以查看工作树、暂存区之间的差别；查看与最新提交的差别：git diff HEAD
+   git branch:显示分支一览表
+   git checkout -b:创建、切换分支
+                   git checkout -b feature-A 
+                   等价于
+                   git branch feature-A 
+                   git checkout feature-A 
+   git checkout main: 切换到主分支
+   git merge --on-ff feature-A：切换到主分支之后，使用这一命令将feature-A分支合并到主分支
+   vim编辑器基本操作：输入i进入编辑模式，可以输入文字，ESC, 输入:进入末行模式，输入wq(保存并退出)
+                     vi+文件名：对文件进行编辑
+                     cat+文件名：显示文件内容
+   git reflog:git log命令只能查看以当前状态为终点的历史日志; git reflog命令，查看当前仓库的操作日志
+   git remote add: 添加远程仓库; git remote add origin git@github.com:Lilyspace/Test.git
+   git push: 推送至远程仓库
+             推送至master分支：git push -u origin master
+                 -u参数可以在推送的同时，将origin仓库的master分支设置为本地仓库当前分支的upstream（上游）。
+                 添加了这个参数，将来运行git pull命令从远程仓库获取内容时，本地仓库的这个分支就可以直接从origin的master分支获取内容，省去了另外添加参数的麻烦
+   clone已有仓库：git clone git@github.com:Lilyspace/Test.git（仓库地址，在网页code-SSh显示）
+   获取远程的feature-D分支: git checkout -b feature-D origin/feature-D
+                          -b参数的后面是本地仓库中新建分支的名称,以名为origin的仓库（这里指GitHub端的仓库）的feature-D分支为来源，在本地仓库中创建feature-D分支
+   git pull:获取最新的远程仓库分支, git pull origin feature-D 
+   
+
+             
+
+
+
+   
+
+   
+
+   
+    
+
