@@ -20,9 +20,9 @@
     git remote -v: 查看远程仓库
     git remote add origin + 仓库的SHH: 添加远程仓库（将本地文件夹与远程仓库关联）; git remote add origin git@github.com:Lilyspace/Test.git
     git commit -m "提交信息，是对这个提交的概述"
-    git log 查看提交日志（git log之后需要退出Vim编辑器，q; wq 保存并退出）
+    git log 查看提交日志（git log之后需要退出编辑器：q）
     git push: GitHub上的仓库会被更新
-
+    退出Vim编辑器：输入文字---Esc---shift+：--- q/wq(q直接退出；wq保存并退出)
 
 10. 基本操作
    git init: 初始化仓库，以下命令实际创建了一个名为git-tutorial的目录并进行了初始化
