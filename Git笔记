@@ -13,12 +13,15 @@
 4. pwd : print working directory, 打印工作目录，它会显示我们当前所在的目录路径
 5. ls: list, 列出当前目录中的所有文件
 6. git status: 文件未添加至git 仓库时，显示为untracked files
+常用操作（一般流程）：
 7. 通过git add命令将文件加入暂存区，再通过git commit命令提交。添加成功后，可以通过git log命令查看提交日志。
     git add hello_world.text: 将hello_word.tesxt提交至仓库。这样一来，这个文件就进入了版本管理系统的管理之下。今后的更改管理都交由Git进行
+    git pull <remote branch>: e.g. git pull origin main
+    git remote -v: 查看远程仓库
+    git remote add origin + 仓库的SHH: 添加远程仓库（将本地文件夹与远程仓库关联）; git remote add origin git@github.com:Lilyspace/Test.git
     git commit -m "提交信息，是对这个提交的概述"
-    git log 查看提交日志
-8. git log之后需要退出Vim编辑器，q; wq 保存并退出
-9. git push: GitHub上的仓库会被更新
+    git log 查看提交日志（git log之后需要退出Vim编辑器，q; wq 保存并退出）
+    git push: GitHub上的仓库会被更新
 
 
 10. 基本操作
@@ -50,7 +53,8 @@
                      vi+文件名：对文件进行编辑
                      cat+文件名：显示文件内容
    git reflog:git log命令只能查看以当前状态为终点的历史日志; git reflog命令，查看当前仓库的操作日志
-   git remote add: 添加远程仓库; git remote add origin git@github.com:Lilyspace/Test.git
+   git remote add origin + 仓库的SHH: 添加远程仓库（将本地文件夹与远程仓库关联）; git remote add origin git@github.com:Lilyspace/Test.git
+   git remote -v: 查看远程仓库
    git push: 推送至远程仓库
              推送至master分支：git push -u origin master
                  -u参数可以在推送的同时，将origin仓库的master分支设置为本地仓库当前分支的upstream（上游）。
