@@ -80,7 +80,7 @@ def generate_seller_modification_list():
             elif is_tollgate_eligible == 0 and is_cli_tollgate == 1:
                 sellerToRemoveList.append(merchant_customer_id)
         else:
-            print('unexpected defect category [%s] for customer [%d]' % defect_category % merchant_customer_id)
+            print('unexpected defect category [{}] for customer [{}]'.format(defect_category, merchant_customer_id ))
     print('new seller to add', newSellerToAddList)
     print('seller to remove', sellerToRemoveList)
 
